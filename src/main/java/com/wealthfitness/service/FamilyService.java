@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 public class FamilyService {
 
     @Autowired
-    private FamilyRepository FamilyRepository;      //to access student repository class
+    private FamilyRepository FamilyRepository;      //to access FamilyRepository class
 
-    //pass family obj to FamilyRepository
+    //saves family in database
     public Family registerFamily(Family family) {
         return FamilyRepository.save(family);   
     }

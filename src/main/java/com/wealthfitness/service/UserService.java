@@ -11,11 +11,11 @@ import java.util.Optional;
 public class UserService {
 
     @Autowired
-    private UserRepository userRepository;      //to access student repository class
+    private UserRepository userRepository;      //to access userRepository class
 
-    //pass user obj to userRepository
+    //saves user in database
     public User registerUser(User user) {
-        return userRepository.save(user);   
+        return userRepository.save(user);
     }
 
     //fetch by email

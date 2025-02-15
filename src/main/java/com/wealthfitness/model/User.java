@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 
-@Entity
+@Entity //it marks this class is database table
 @Table(name = "users")
 @Data
 public class User {
@@ -19,11 +19,11 @@ public class User {
     private String middleName;
 
     @Column(nullable = false)
-    private String lasttName;
+    private String lastName;
 
     //for full name
     public String fullName() {
-        return (firstName+" "+(middleName != null ? middleName + " ": "")+lasttName);
+        return (firstName+" "+(middleName != null ? middleName + " ": "")+lastName);
     }
 
     @Column(unique = true,nullable = false) //allow unique values and notnull
@@ -31,7 +31,7 @@ public class User {
 
     private String password;
 
-    @Column(columnDefinition = "int(11)")
+    @Column(nullable = false, length = 15)  // max length=15
     private String contactNumber;
 
     @ManyToOne  //many user has one family it is Foreign key
