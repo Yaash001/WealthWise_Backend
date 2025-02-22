@@ -1,0 +1,27 @@
+#spring.application.name=wealthwise
+#
+## Database Connection
+#spring.datasource.url=jdbc:mysql://127.0.0.1:3306/wealthy
+#spring.datasource.username=root
+#spring.datasource.password=Radhika653
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.datasource.default.schema=wealthy
+#
+## Hibernate (JPA) Properties
+#spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+#spring.jpa.hibernate.ddl-auto=Update
+#spring.jpa.show-sql=true
+#spring.jpa.generate-ddl=true
+#logging.level.org.hibernate.SQL=DEBUG
+#
+#
+## Server Port
+#server.port=8080
+#
+## JWT Secret Key (Used for Authentication)
+#jwt.secret=your_jwt_secret_key
+#jwt.expiration=3600000
+#
+#
+#spring.security.user.name=admin
+#spring.security.user.password=admin123
