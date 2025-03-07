@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import javax.sql.DataSource;
 import liquibase.integration.spring.SpringLiquibase;
-import org.springframework.jdbc.core.JdbcTemplate;
+// import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -17,6 +19,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 import java.util.Properties;
 
 @Configuration
+@EnableJpaRepositories(basePackages = "in.starmaven.wealthwise.repository")
+@EntityScan(basePackages = "in.starmaven.wealthwise.model")
 public class DatabaseConfig {
 
     @Value("${spring.datasource.url}")
@@ -51,7 +55,7 @@ public class DatabaseConfig {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(@Qualifier("minutesDataSource") DataSource minutesDataSource) {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(@Qualifier("dataSource") DataSource dataSource) {
         Properties jpaProps = new Properties();
         jpaProps.setProperty("hibernate.show_sql", "false");
         jpaProps.setProperty("hibernate.default_schema", databaseDefaultSchema);
@@ -61,7 +65,7 @@ public class DatabaseConfig {
         vendorAdapter.setGenerateDdl(false);
 
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-        em.setDataSource(minutesDataSource);
+        em.setDataSource(dataSource);
         em.setPackagesToScan("in.starmaven.wealthwise.entity");
         em.setJpaProperties(jpaProps);
         em.setJpaVendorAdapter(vendorAdapter);

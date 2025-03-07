@@ -29,6 +29,7 @@
 //    @Column(unique = true,nullable = false) //allow unique values and notnull
 //    private String email;
 //
+//    @Column(nullable = false, length = 15)
 //    private String password;
 //
 //    @Column(nullable = false, length = 15)  // max length=15

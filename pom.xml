@@ -112,6 +112,13 @@
 			<artifactId>liquibase-core</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.6.5.Final</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

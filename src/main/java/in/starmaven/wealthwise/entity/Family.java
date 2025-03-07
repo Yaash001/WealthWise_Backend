@@ -16,7 +16,7 @@ public class Family implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private String id;
+    private Long id;
 
     @Column(name = "name", nullable = false)
     private String name;
