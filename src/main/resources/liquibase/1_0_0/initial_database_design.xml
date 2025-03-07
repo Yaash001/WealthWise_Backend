@@ -48,4 +48,12 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="add-role-column" author="your_name">
+        <addColumn tableName="user">
+            <column name="role" type="VARCHAR(50)" defaultValue="USER">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>

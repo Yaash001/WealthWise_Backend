@@ -34,6 +34,9 @@
 //
 //    @Column(nullable = false, length = 15)  // max length=15
 //    private String contactNumber;
+// 
+//    @Column(nullable = false)
+//    private String role; // User role (ADMIN / USER)
 //
 //    @ManyToOne  //many user has one family it is Foreign key
 //    @JoinColumn(name = "family_id", nullable = false)
