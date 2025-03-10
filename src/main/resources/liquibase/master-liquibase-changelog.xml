@@ -9,4 +9,5 @@
 
 
     <include file="classpath:liquibase/1_0_0/initial_database_design.xml"/>
+    <include file="classpath:liquibase/1_0_0/2_0update.xml"/>
 </databaseChangeLog>
