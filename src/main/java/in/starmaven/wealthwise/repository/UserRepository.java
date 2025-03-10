@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;//to do CRUD operat
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
+@SuppressWarnings("unused")
 public interface UserRepository extends JpaRepository<User, Long> {
    Optional<User> findByEmail(String email);//finding by email
 }
