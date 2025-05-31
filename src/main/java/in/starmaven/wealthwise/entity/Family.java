@@ -5,8 +5,9 @@ import lombok.*;
 
 import java.io.Serializable;
 
-@Entity
-@Table(name = "family")
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "families") //collection nme
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,14 +15,10 @@ import java.io.Serializable;
 @ToString
 public class Family implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    private String id;
 
-    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "status", nullable = false)
     private String status;
 }
 

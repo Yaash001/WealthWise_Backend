@@ -1,44 +1,38 @@
 package in.starmaven.wealthwise.entity;
 
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
 
-@Entity //it marks this class is database table
-@Table(name = "user")
+@Document(collection  = "users") //MONGODB COLLECTION NAME 
 @Data
 public class User {
 
    @Id //for primary key
    @GeneratedValue(strategy = GenerationType.IDENTITY)     //for automatic genration
-   private Long id;
+   private String id; //coz Mongo strores id in string
 
-   @Column(nullable = false)
-   private String firstName;
+    //removed colums as using mongodb and not uses @column
+    private String firstName;
+    private String middleName;
+    private String lastName;
 
-   private String middleName;
-
-   @Column(nullable = false)
-   private String lastName;
-
-   //for full name
-   public String fullName() {
+    public String fullName() {
        return (firstName+" "+(middleName != null ? middleName + " ": "")+lastName);
    }
 
-   @Column(unique = true,nullable = false) //allow unique values and notnull
-   private String email;
 
-   @Column(nullable = false, length = 15)
-   private String password;
+    private String email;
+    private String passWord;
+    private String contactNumber;
+    private String role; // User role (ADMIN / USER)
 
-   @Column(nullable = false, length = 15)  // max length=15
-   private String contactNumber;
-
-   @Column(nullable = false)
-   private String role; // User role (ADMIN / USER)
-
-   @ManyToOne  //many user has one family it is Foreign key
-   @JoinColumn(name = "family_id", nullable = false)
-   private Family family;
+   
+   //for full name
+   
+   @DBRef
+   private Family family; // Refercence to family document
 }
