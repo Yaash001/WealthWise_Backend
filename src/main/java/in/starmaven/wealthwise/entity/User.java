@@ -34,5 +34,6 @@ public class User {
    //for full name
    
    @DBRef
-   private Family family; // Refercence to family document
+   private Family family;
+    // Refercence to family document
 }
