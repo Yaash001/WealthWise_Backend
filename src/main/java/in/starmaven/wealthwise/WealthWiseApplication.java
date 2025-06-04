@@ -11,5 +11,6 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 public class WealthWiseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WealthWiseApplication.class, args);
+		System.out.println("\t\t\t///////////////////Application Started Successfully\\\\\\\\\\\\\\\\\\\\\\\\");
 	}
 }

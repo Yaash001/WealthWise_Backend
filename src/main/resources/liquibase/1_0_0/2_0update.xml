@@ -18,20 +18,18 @@
     <changeSet id="add-family-id-to-user" author="parth">
         <addColumn tableName="user">
             <column name="family_id" type="BIGINT"/>
+            <column name="role" type="VARCHAR(50)" defaultValue="USER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contactNumber" type="VARCHAR(50)" >
+                <constraints nullable="false"/>
+            </column>
         </addColumn>
 
         <addForeignKeyConstraint 
             baseTableName="user" baseColumnNames="family_id"
             referencedTableName="family" referencedColumnNames="id"
             constraintName="fk_user_family"/>
-    </changeSet>
-
-    <changeSet id="add-contactNumber-column" author="parth">
-        <addColumn tableName="user">
-            <column name="contactNumber" type="VARCHAR(50)" >
-                <constraints nullable="false"/>
-            </column>
-        </addColumn>
     </changeSet>
     
 </databaseChangeLog>

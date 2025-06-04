@@ -44,16 +44,11 @@
             <column name="password" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="add-role-column" author="your_name">
-        <addColumn tableName="user">
-            <column name="role" type="VARCHAR(50)" defaultValue="USER">
+            <column name="family_name" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-        </addColumn>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </createTable>
     </changeSet>
 
 </databaseChangeLog>
