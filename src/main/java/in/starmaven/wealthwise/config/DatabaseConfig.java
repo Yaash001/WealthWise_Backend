@@ -10,12 +10,11 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import javax.sql.DataSource;
 import liquibase.integration.spring.SpringLiquibase;
-// import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
- this is test
+
 import java.util.Properties;
 
 @Configuration
@@ -77,4 +76,4 @@ public class DatabaseConfig {
         return new JpaTransactionManager(entityManagerFactory);
     }
 }
-*/
+    */

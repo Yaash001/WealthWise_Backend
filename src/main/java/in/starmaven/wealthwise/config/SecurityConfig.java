@@ -19,6 +19,7 @@ public class SecurityConfig {
                         .allowedMethods("GET", "POST", "PUT", "DELETE")  // allows this HTTP methods
                         .allowedHeaders("*")  // use to allow all headers and request from front end
                         .allowCredentials(true);  // it use send cookies for JWT
+                        
             }
         };
     }
