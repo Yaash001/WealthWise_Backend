@@ -1,5 +1,6 @@
 package in.starmaven.wealthwise.entity;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -24,10 +25,14 @@ public class User {
        return (firstName+" "+(middleName != null ? middleName + " ": "")+lastName);
    }
 
-
+   @Indexed(unique = true)
     private String email;
+
     private String passWord;
+
+    @Indexed(unique = true)
     private String contactNumber;
+    
     private String role; // User role (ADMIN / USER)
 
    
